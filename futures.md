@@ -90,11 +90,11 @@ Endpoints under **Public** section can be accessed freely without requiring any 
 | multiplier      | number | `0.5`        | Futures face value                                                            |
 | multiplierCoin  | string | `BTC`        | Futures face value unit                                                       |
 | pricePrecision  | number | `4`          | Precision of the price                                                        |
-| minOrderVolume  | number | `10`         | Minimum order volume                                                          |
+| minOrderVolume  | number | `10`         | Minimum order volume, the unit is "sheet".                                    |
 | minOrderMoney   | number | `10`         | Minimum order value                                                           |
-| maxMarketVolume | number | `100000`     | Market price order maximum volume                                             |
+| maxMarketVolume | number | `100000`     | Market price order maximum volume, the unit is "sheet".                       |
 | maxMarketMoney  | number | `100000`     | Market price order maximum value                                              |
-| maxLimitVolume  | number | `100000`     | Limit price order maximum volume                                              |
+| maxLimitVolume  | number | `100000`     | Limit price order maximum volume, the unit is "sheet".                        |
 | maxValidOrder   | number | `100000`     | Maximum valid order quantity                                                  |
 | minLever        | number | `5`          | Minimum leverage multiplier                                                   |
 | maxLever        | number | `5`          | Maximum leverage multiplier                                                   |
@@ -354,17 +354,17 @@ Creation of single new orders
 
 #### Request Body
 
-| Name          | Type   | Description                                                  |
-| ------------- | ------ | ------------------------------------------------------------ |
-| volume        | number | Order quantity                                               |
-| price         | number | Order price                                                  |
-| contractName  | string | Futures name E.g. `E-BTC-USDT`                               |
-| type          | string | Order type, `LIMIT/MARKET`                                   |
-| side          | string | Trade direction, `BUY/SELL`                                  |
-| open          | string | Open balancing direction, `OPEN/CLOSE`                       |
-| positionType  | number | Hold-up position, `1 full position, 2 restrictive position`  |
-| clientOrderId | string | Client order identity, a string with length less than 32 bit |
-| timeInForce   | string | `IOC, FOK, POST_ONLY`                                        |
+| Name          | Type   | Description                                                                                                                                                                 |
+| ------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| volume        | number | Order quantity,When the type is LIMIT, the unit is "sheet"; when the type is MARKET, the unit is "value" (in U-USD, "value" is "U", and in coin-based, "value" is "coins"). |
+| price         | number | Order price                                                                                                                                                                 |
+| contractName  | string | Futures name E.g. `E-BTC-USDT`                                                                                                                                              |
+| type          | string | Order type, `LIMIT/MARKET`                                                                                                                                                  |
+| side          | string | Trade direction, `BUY/SELL`                                                                                                                                                 |
+| open          | string | Open balancing direction, `OPEN/CLOSE`                                                                                                                                      |
+| positionType  | number | Hold-up position, `1 full position, 2 restrictive position`                                                                                                                 |
+| clientOrderId | string | Client order identity, a string with length less than 32 bit                                                                                                                |
+| timeInForce   | string | `IOC, FOK, POST_ONLY`                                                                                                                                                       |
 
 {% tabs %}
 {% tab title="200 " %}
@@ -396,17 +396,17 @@ Creation of single new orders
 
 #### Request Body
 
-| Name         | Type   | Description                                                 |
-| ------------ | ------ | ----------------------------------------------------------- |
-| volume       | number | Order quantity                                              |
-| triggerType  | string | Trigger type `3UP/4DOWN`                                    |
-| triggerPrice | string | Trigger price                                               |
-| positionType | number | Hold-up position, `1 full position, 2 restrictive position` |
-| open         | string | Open balancing direction, `OPEN/CLOSE`                      |
-| side         | string | Trade direction, `BUY/SELL`                                 |
-| type         | string | Order type, `LIMIT/MARKET`                                  |
-| contractName | string | Futures name E.g. `E-BTC-USDT`                              |
-| price        | number | Order price                                                 |
+| Name         | Type   | Description                                                                                                                                                                 |
+| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| volume       | number | Order quantity,When the type is LIMIT, the unit is "sheet"; when the type is MARKET, the unit is "value" (in U-USD, "value" is "U", and in coin-based, "value" is "coins"). |
+| triggerType  | string | Trigger type `3UP/4DOWN`                                                                                                                                                    |
+| triggerPrice | string | Trigger price                                                                                                                                                               |
+| positionType | number | Hold-up position, `1 full position, 2 restrictive position`                                                                                                                 |
+| open         | string | Open balancing direction, `OPEN/CLOSE`                                                                                                                                      |
+| side         | string | Trade direction, `BUY/SELL`                                                                                                                                                 |
+| type         | string | Order type, `LIMIT/MARKET`                                                                                                                                                  |
+| contractName | string | Futures name E.g. `E-BTC-USDT`                                                                                                                                              |
+| price        | number | Order price                                                                                                                                                                 |
 
 {% tabs %}
 {% tab title="200: OK " %}
@@ -1001,7 +1001,7 @@ All interfaces under the account require [signature and API-key verification​]
 | uid                   | integer | 10023   | User ID                                                                   |
 | positionType          | integer | 1       | Hold position type(1 full，2 restrictive)                                  |
 | side                  | string  | SELL    | Hold position direction BUY sell long, SELL buy short                     |
-| volume                | float   | 1.05    | Hold quantity                                                             |
+| volume                | float   | 1.05    | Hold quantity,the unit is "sheet".                                        |
 | openPrice             | float   | 1.05    | Open position price                                                       |
 | avgPrice              | float   | 1.05    | Hold average price                                                        |
 | closePrice            | float   | 1.05    | Balancing average price                                                   |
