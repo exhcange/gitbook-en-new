@@ -354,17 +354,17 @@ Creation of single new orders
 
 #### Request Body
 
-| Name          | Type   | Description                                                                                                                                                                 |
-| ------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| volume        | number | Order quantity,When the type is LIMIT, the unit is "sheet"; when the type is MARKET, the unit is "value" (in U-USD, "value" is "U", and in coin-based, "value" is "coins"). |
-| price         | number | Order price                                                                                                                                                                 |
-| contractName  | string | Futures name E.g. `E-BTC-USDT`                                                                                                                                              |
-| type          | string | Order type, `LIMIT/MARKET`                                                                                                                                                  |
-| side          | string | Trade direction, `BUY/SELL`                                                                                                                                                 |
-| open          | string | Open balancing direction, `OPEN/CLOSE`                                                                                                                                      |
-| positionType  | number | Hold-up position, `1 full position, 2 restrictive position`                                                                                                                 |
-| clientOrderId | string | Client order identity, a string with length less than 32 bit                                                                                                                |
-| timeInForce   | string | `IOC, FOK, POST_ONLY`                                                                                                                                                       |
+| Name          | Type   | Description                                                                                                                                                                |
+| ------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| volume        | number | Order quantity,When the type is LIMIT, the unit is "sheet"; when the type is MARKET, the unit is "value" (in U-USD, "value" is "U", and in coin-based, "value" is "coins") |
+| price         | number | Order price                                                                                                                                                                |
+| contractName  | string | Futures name E.g. `E-BTC-USDT`                                                                                                                                             |
+| type          | string | Order type, `LIMIT/MARKET`                                                                                                                                                 |
+| side          | string | Trade direction, `BUY/SELL`                                                                                                                                                |
+| open          | string | Open balancing direction, `OPEN/CLOSE`                                                                                                                                     |
+| positionType  | number | Hold-up position, `1 full position, 2 restrictive position`                                                                                                                |
+| clientOrderId | string | Client order identity, a string with length less than 32 bit                                                                                                               |
+| timeInForce   | string | `IOC, FOK, POST_ONLY`                                                                                                                                                      |
 
 {% tabs %}
 {% tab title="200 " %}
