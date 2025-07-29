@@ -599,11 +599,11 @@ Speed limit rules: 20 times/ 2 seconds
 
 #### Request Body
 
-| Name         | Type   | Description                           |
-| ------------ | ------ | ------------------------------------- |
-| contractName | string | Futures name E.g. E-BTC-USDT          |
-| limit        | string | Lines per page, default 100, max 1000 |
-| fromId       | long   | Start retrieving from this Id         |
+| Name         | Type   | Description                          |
+| ------------ | ------ | ------------------------------------ |
+| contractName | string | Futures name E.g. E-BTC-USDT         |
+| limit        | string | Lines per page, default 100, max 500 |
+| fromId       | long   | Start retrieving from this Id        |
 
 {% tabs %}
 {% tab title="200: OK " %}
@@ -651,11 +651,11 @@ Speed limit rules: 20 times/ 2 seconds
 
 #### Request Body
 
-| Name         | Type   | Description                           |
-| ------------ | ------ | ------------------------------------- |
-| contractName | string | Futures  name E.g. E-BTC-USDT         |
-| limit        | string | Lines per page, default 100, max 1000 |
-| fromId       | long   | Start retrieving from this Id         |
+| Name         | Type   | Description                          |
+| ------------ | ------ | ------------------------------------ |
+| contractName | string | Futures  name E.g. E-BTC-USDT        |
+| limit        | string | Lines per page, default 100, max 500 |
+| fromId       | long   | Start retrieving from this Id        |
 
 {% tabs %}
 {% tab title="200: OK " %}
@@ -693,11 +693,11 @@ Speed limit rules: 20 times/ 2 seconds
 
 #### Query Parameters
 
-| Name         | Type   | Description                           |
-| ------------ | ------ | ------------------------------------- |
-| contractName | string | Futures name E.g. E-BTC-USDT          |
-| limit        | string | Lines per page, default 100, max 1000 |
-| fromId       | long   | Start retrieving from this tradeId    |
+| Name         | Type   | Description                          |
+| ------------ | ------ | ------------------------------------ |
+| contractName | string | Futures name E.g. E-BTC-USDT         |
+| limit        | string | Lines per page, default 100, max 500 |
+| fromId       | long   | Start retrieving from this tradeId   |
 
 #### Headers
 
