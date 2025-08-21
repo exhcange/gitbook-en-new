@@ -364,7 +364,7 @@ Creation of single new orders
 | open          | string | Open balancing direction, `OPEN/CLOSE`                                                                                                                                     |
 | positionType  | number | Hold-up position, `1 full position, 2 restrictive position`                                                                                                                |
 | clientOrderId | string | Client order identity, a string with length less than 32 bit                                                                                                               |
-| timeInForce   | string | `IOC, FOK, POST_ONLY`                                                                                                                                                      |
+| timeInForce   | string | <p>When the type is MARKET ,not need this<br><code>IOC, FOK, POST_ONLY</code></p>                                                                                          |
 
 {% tabs %}
 {% tab title="200 " %}
@@ -1001,14 +1001,14 @@ All interfaces under the account require [signature and API-key verification​]
 | uid                   | integer | 10023   | User ID                                                                   |
 | positionType          | integer | 1       | Hold position type(1 full，2 restrictive)                                  |
 | side                  | string  | SELL    | Hold position direction BUY sell long, SELL buy short                     |
-| volume                | float   | 1.05    | Hold quantity,the unit is "sheet".                                        |
+| volume                | integer | 1       | Hold quantity,the unit is "sheet".                                        |
 | openPrice             | float   | 1.05    | Open position price                                                       |
 | avgPrice              | float   | 1.05    | Hold average price                                                        |
 | closePrice            | float   | 1.05    | Balancing average price                                                   |
-| leverageLevel         | float   | 1.05    | Leverage multiple                                                         |
+| leverageLevel         | integer | 1       | Leverage multiple                                                         |
 | holdAmount            | float   | 1.05    | Hold position margin                                                      |
-| closeVolume           | float   | 1.05    | Balanced quantity                                                         |
-| pendingCloseVolume    | float   | 1.05    | The number of pending closing orders                                      |
+| closeVolume           | integer | 1       | Balanced quantity                                                         |
+| pendingCloseVolume    | integer | 1       | The number of pending closing orders                                      |
 | realizedAmount        | float   | 1.05    | Profit and losses occurred                                                |
 | historyRealizedAmount | float   | 1.05    | Historic accumulated profit and losses                                    |
 | tradeFee              | float   | 1.05    | Trading fees                                                              |
