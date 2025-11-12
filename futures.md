@@ -1036,3 +1036,41 @@ All interfaces under the account require [signature and API-key verification​]
 | indexPrice            | float   | 1.05    | Newest marked price                                                       |
 | keepRate              | float   | 1.05    | Scaled minimum kept margin rate                                           |
 | maxFeeRate            | float   | 1.05    | <p>Balancing maximum fees rate<br></p>                                    |
+
+## Account transaction info
+
+<mark style="color:blue;">`POST`</mark> `https://futuresopenapi.xxx.com/fapi/v1/get_user_transaction`&#x20;
+
+| Name        | Type    | Description  |
+| ----------- | ------- | ------------ |
+| X-CH-SIGN   | string  | Signature    |
+| X-CH-APIKEY | string  | Your API-key |
+| X-CH-TS     | integer | time stamp   |
+
+**Request Body**
+
+| Name        | type    | Description                                                                |
+| ----------- | ------- | -------------------------------------------------------------------------- |
+| beginTime\* | string  | Required parameters: Start time, format: YYYY-MM-dd HH:mm:ss               |
+| endTime     | string  | Optional parameter: End time, format: YYYY-MM-dd HH:mm:ss                  |
+| page        | integer | The current page, defaulting to 1.                                         |
+| limit       | integer | The number of data displayed per page is 500 by default and 500 by maximum |
+
+#### **Response:**
+
+| Name              | Type   | mate                                                                                                                                                                                                   |
+| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| uid               | number | coUid                                                                                                                                                                                                  |
+| contractName      | String | contractName                                                                                                                                                                                           |
+| contractOtherName | String | contractOtherName                                                                                                                                                                                      |
+| timeStamp         | number | The transaction generates timestamps                                                                                                                                                                   |
+| type              | String | Currently supported query transaction types: "fundingFee", "transferIn", "transferOut", "openFee", "closeFee", "settlementLossShare", "shareFee", "coupon", "couponRecycle", "settlementClosePosition" |
+| date              | String | Transaction time                                                                                                                                                                                       |
+| amount            | String | Transaction amount                                                                                                                                                                                     |
+| page              | number | Current page count                                                                                                                                                                                     |
+| limit             | number | The number of items per page                                                                                                                                                                           |
+
+
+
+
+
