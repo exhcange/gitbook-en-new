@@ -237,6 +237,8 @@ A fixed message will be pushed:
         "dealVolume": 0,
         "volume": 100,
         "avgPrice": 0,
+        "tradeFee": 3.2,
+        "realizedAmount": 10.6,
         "otoOrder": {
             "takerProfitStatus": false,
             "takerProfitTrigger": 61001,
@@ -247,7 +249,7 @@ A fixed message will be pushed:
             "stopLossPrice": 0,
             "stopLossTriggerId": null
         },
-        "orderAction": "1" // 1: New, 2: Cancel, 3: Order change
+        "orderAction": "1" // 1: New, 2: Cancel, 3: Order change(part trade,fill trade...)
     }
 }
 ```
