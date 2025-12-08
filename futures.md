@@ -517,21 +517,21 @@ Speed limit rules: 20 times/ 2 seconds
 
 #### Response:
 
-| name           | type   | example              | description                                                                                                                                                                           |
-| -------------- | ------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `orderId`      | long   | `150695552109032492` | Order ID（system generated                                                                                                                                                             |
-| `contractName` | string | `E-BTC-USDT`         | Futures  name                                                                                                                                                                         |
-| `price`        | float  | `10.5`               | Order price                                                                                                                                                                           |
-| `origQty`      | float  | `10.5`               | Order quantity                                                                                                                                                                        |
-| `executedQty`  | float  | `20`                 | Order quantity                                                                                                                                                                        |
-| `avgPrice`     | float  | `10.5`               | Average transaction price                                                                                                                                                             |
-| `symbol`       | string | `BHTUSDT`            | Coin pair name                                                                                                                                                                        |
-| `status`       | string | `NEW`                | Order status. Possible values are：`NEW`(new order，not filled)、`PARTIALLY_FILLED`（partially filled）、`FILLED`（fully filled）、`CANCELLED`（already cancelled）and`REJECTED`（order rejected） |
-| `side`         | string | `NEW`                | Order direction. Possible values can only be：BUY（buy long）and SELL（sell short）                                                                                                        |
-| `action`       | string | `OPEN`               | `OPEN/CLOSE`                                                                                                                                                                          |
-| `transactTime` | long   | `1607702400000`      | Order creation time                                                                                                                                                                   |
-| tradeFee       | float  | 2.9                  | order trade fee                                                                                                                                                                       |
-| realizedAmount | float  | 10.6                 | order prfit                                                                                                                                                                           |
+| name             | type   | example              | description                                                                                                                                                                           |
+| ---------------- | ------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `orderId`        | long   | `150695552109032492` | Order ID（system generated                                                                                                                                                             |
+| `contractName`   | string | `E-BTC-USDT`         | Futures  name                                                                                                                                                                         |
+| `price`          | float  | `10.5`               | Order price                                                                                                                                                                           |
+| `origQty`        | float  | `10.5`               | Order quantity                                                                                                                                                                        |
+| `executedQty`    | float  | `20`                 | Order quantity                                                                                                                                                                        |
+| `avgPrice`       | float  | `10.5`               | Average transaction price                                                                                                                                                             |
+| `symbol`         | string | `BHTUSDT`            | Coin pair name                                                                                                                                                                        |
+| `status`         | string | `NEW`                | Order status. Possible values are：`NEW`(new order，not filled)、`PARTIALLY_FILLED`（partially filled）、`FILLED`（fully filled）、`CANCELLED`（already cancelled）and`REJECTED`（order rejected） |
+| `side`           | string | `NEW`                | Order direction. Possible values can only be：BUY（buy long）and SELL（sell short）                                                                                                        |
+| `action`         | string | `OPEN`               | `OPEN/CLOSE`                                                                                                                                                                          |
+| `transactTime`   | long   | `1607702400000`      | Order creation time                                                                                                                                                                   |
+| `tradeFee`       | float  | 2.9                  | order trade fee                                                                                                                                                                       |
+| `realizedAmount` | float  | 10.6                 | order prfit                                                                                                                                                                           |
 
 ## Open order
 
