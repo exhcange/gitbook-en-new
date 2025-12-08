@@ -2,7 +2,7 @@
 
 ## Public
 
-### Security: [None](broken-reference)
+### Security: [None](/broken/pages/-MDoKoKWsdB2tB7aWQhZ#jie-kou-jian-quan-lei-xing)
 
 Endpoints under **Public** section can be accessed freely without requiring any API-key or signatures
 
@@ -504,7 +504,9 @@ Speed limit rules: 20 times/ 2 seconds
        "action": "OPEN",
        "contractName": "E-BTC-USDT",
        "type": "LIMIT",
-       "status": "INIT"
+       "status": "INIT",
+       "tradeFee": 2.700,
+       "realizedAmount": 10.8
     }
 ]
 
@@ -528,6 +530,8 @@ Speed limit rules: 20 times/ 2 seconds
 | `side`         | string | `NEW`                | Order direction. Possible values can only be：BUY（buy long）and SELL（sell short）                                                                                                        |
 | `action`       | string | `OPEN`               | `OPEN/CLOSE`                                                                                                                                                                          |
 | `transactTime` | long   | `1607702400000`      | Order creation time                                                                                                                                                                   |
+| tradeFee       | float  | 2.9                  | order trade fee                                                                                                                                                                       |
+| realizedAmount | float  | 10.6                 | order prfit                                                                                                                                                                           |
 
 ## Open order
 
