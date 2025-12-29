@@ -2,7 +2,7 @@
 
 ### 24h summary
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/v2/pub/summary`
+<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/v2/pub/summary`
 
 **Request parameters**
 
@@ -84,7 +84,7 @@ no
 
 ### List of currencies
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/v2/pub/asset`
+<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/v2/pub/asset`
 
 **Request parameters**
 
@@ -136,7 +136,7 @@ no
 
 ### Coin quotes
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/v2/pub/ticker`
+<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/v2/pub/ticker`
 
 **Request parameters**
 
@@ -185,7 +185,7 @@ no
 
 ### Disc data
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/v2/pub/orderbook`
+<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/v2/pub/orderbook`
 
 **Request parameters**
 
@@ -240,7 +240,7 @@ no
 
 ### List of deals
 
-<mark style="color:green;">`POST`</mark> `https://openapi.xxx.xx/v2/pub/trades`
+<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/v2/pub/trades`
 
 **Request parameters**
 
