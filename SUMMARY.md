@@ -11,6 +11,8 @@
 * [Wallet](wallet.md)
 * [WebSocket](websocket.md)
 * [Websocket-Futures Orders Position](websocket-futures-orders-position.md)
+* [CMC docking](cmc-docking.md)
+* [Coingecko dockin](coingecko-dockin.md)
 * [Errors](errors.md)
 * [Official SDK](official-sdk.md)
 * [CCXT](ccxt/README.md)
