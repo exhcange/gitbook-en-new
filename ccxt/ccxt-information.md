@@ -2,8 +2,7 @@
 
 ### 1. Introduction to CCXT
 
-CCXT (CryptoCurrency eXchange Trading Library) is an open source cryptocurrency exchanges unified API library, support for multiple mainstream programming languages (Python, JavaScript/Node.js, PHP), used to simplify the interface docking problems of multiple digital currency exchanges.\
-
+CCXT (CryptoCurrency eXchange Trading Library) is an open source cryptocurrency exchanges unified API library, support for multiple mainstream programming languages (Python, JavaScript/Node.js, PHP), used to simplify the interface docking problems of multiple digital currency exchanges.<br>
 
 CCXT provides a unified data structure and interface encapsulation, so that developers can use a set of standardized methods to call different exchanges (such as Binance, Huobi, OKX, Coinbase, Bitfinex, etc.) quotes query, order, asset management and other functions, without the need to adapt to the different APIs of each exchange.
 

@@ -2,7 +2,7 @@
 
 ### Trade
 
-### Security Type: [TRADE](broken-reference)
+### Security Type: [TRADE](/broken/pages/-MDoKoKWsdB2tB7aWQhZ#endpoint-security-type)
 
 Endpoints under Trade require an API-key and a signature.​
 

@@ -2,7 +2,7 @@
 
 ## Public
 
-Security: [None](broken-reference)
+Security: [None](/broken/pages/-MCyg9O5cVUuwNeXPy6I#jie-kou-jian-quan-lei-xing)
 
 ### &#x20;Test Connectivity
 
@@ -133,7 +133,7 @@ Security: [None](broken-reference)
 
 ## Market
 
-Security Type: [None](broken-reference)
+Security Type: [None](/broken/pages/-MCyg9O5cVUuwNeXPy6I#jie-kou-jian-quan-lei-xing)
 
 ### &#x20;Depth
 
@@ -397,7 +397,7 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
 
 ## Trade
 
-### Security Type: [TRADE](broken-reference)
+### Security Type: [TRADE](/broken/pages/-MDoKoKWsdB2tB7aWQhZ#endpoint-security-type)
 
 Endpoints under **Trade** require an API Key and a signature
 
@@ -912,8 +912,7 @@ If `symbol` parameter is not provided, the API will consume a significantly high
 
 Security Type: USER\_DATA
 
-Endpoints under Account require an API-key and a signature.\
-
+Endpoints under Account require an API-key and a signature.<br>
 
 ### &#x20;Account Information
 
@@ -1006,9 +1005,8 @@ Endpoints under Account require an API-key and a signature.\
 
 #### Response:
 
-| transferId | String | <pre><code>1a9ec387-8b81-4789-a98e-bc6a606c8736
-</code></pre> | Transfer ID |   |
-| ---------- | ------ | ------------------------------------------------------------- | ----------- | - |
+<table data-header-hidden><thead><tr><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>transferId</td><td>String</td><td><pre><code>1a9ec387-8b81-4789-a98e-bc6a606c8736
+</code></pre></td><td>Transfer ID</td><td></td></tr></tbody></table>
 
 
 
@@ -1070,12 +1068,5 @@ Only data from the last 6 months is supported for querying.
 
 #### Response:
 
-| transferId  | String | <pre><code>1a9ec387-8b81-4789-a98e-bc6a606c8736
-</code></pre> | Transfer ID                                                                    |   |
-| ----------- | ------ | ------------------------------------------------------------- | ------------------------------------------------------------------------------ | - |
-| fromAccount | String | EXCHANGE                                                      | From Account                                                                   |   |
-| toAccount   | String | FUTURE                                                        | To Account                                                                     |   |
-| coinSymbol  | String | USDT                                                          | coinSymbol                                                                     |   |
-| createTime  | long   | 1742300000000                                                 | Creation Timestamp                                                             |   |
-| amount      | String | 1                                                             | Quantity                                                                       |   |
-| status      | String | SUCCESS                                                       | <p>Status<br>SUCCESS = Success<br>PENDING = In Progress<br>FAILED = Failed</p> |   |
+<table data-header-hidden><thead><tr><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>transferId</td><td>String</td><td><pre><code>1a9ec387-8b81-4789-a98e-bc6a606c8736
+</code></pre></td><td>Transfer ID</td><td></td></tr><tr><td>fromAccount</td><td>String</td><td>EXCHANGE</td><td>From Account</td><td></td></tr><tr><td>toAccount</td><td>String</td><td>FUTURE</td><td>To Account</td><td></td></tr><tr><td>coinSymbol</td><td>String</td><td>USDT</td><td>coinSymbol</td><td></td></tr><tr><td>createTime</td><td>long</td><td>1742300000000</td><td>Creation Timestamp</td><td></td></tr><tr><td>amount</td><td>String</td><td>1</td><td>Quantity</td><td></td></tr><tr><td>status</td><td>String</td><td>SUCCESS</td><td>Status<br>SUCCESS = Success<br>PENDING = In Progress<br>FAILED = Failed</td><td></td></tr></tbody></table>
