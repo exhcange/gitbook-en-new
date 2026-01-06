@@ -340,7 +340,7 @@ This endpoint requires no request parameters
                 "subEmail": "test176@qq.com",
                 "amount": "100",
                 "opType": 1,
-                "trend": 1745486549000
+                "time": 1745486549000
             }
         ]
     }

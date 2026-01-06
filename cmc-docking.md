@@ -26,7 +26,7 @@ no
 | ├─ percentChange | string  | 0       | percentchange                |
 | ├─ lowestAsk     | string  | 0       | 24h seller's lowest price    |
 | ├─ highestBid    | string  | 0       | 24h buyer's highest price    |
-| data.coins       | object  |         |                              |
+| coins            | object  |         |                              |
 | ├─ name          | string  | USDT    | Currency name                |
 | ├─ withdrew      | string  | ON      | Whether to start withdrawing |
 | ├─ deposit       | string  | ON      | Whether to open deposit      |

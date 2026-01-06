@@ -321,11 +321,13 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
 {
     "list":[
         {
-            "price":"3.00000100",
-            "qty":"11.00000000",
-            "time":1499865549590,
-            "side":"BUY"
-        }
+						"price": "3.000001",
+						"qty": "11.0",
+						"time": 1499865549590,
+						"side": "BUY",
+						"id": 629861,
+						"symbol": "BTC/USDT"
+				}
     ]
 }
 ```
@@ -336,11 +338,7 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
 
 #### Response:
 
-<table data-header-hidden><thead><tr><th width="150">name</th><th>type</th><th>example</th><th>description</th><th></th></tr></thead><tbody><tr><td>price</td><td>float</td><td><code>0.055</code></td><td>The price of the trade</td><td></td></tr><tr><td>time</td><td>long</td><td><code>1537797044116</code></td><td>Current timestamp (ms)</td><td></td></tr><tr><td>qty</td><td>float</td><td><code>5</code></td><td>The quantity traded</td><td></td></tr><tr><td>side</td><td>string</td><td><code>BUY/SELL</code></td><td>Taker side</td><td></td></tr></tbody></table>
-
-
-
-
+<table data-header-hidden><thead><tr><th width="150">name</th><th>type</th><th>example</th><th>description</th><th></th></tr></thead><tbody><tr><td>price</td><td>float</td><td><code>0.055</code></td><td>The price of the trade</td><td></td></tr><tr><td>time</td><td>long</td><td><code>1537797044116</code></td><td>Current timestamp (ms)</td><td></td></tr><tr><td>qty</td><td>float</td><td><code>5</code></td><td>The quantity traded</td><td></td></tr><tr><td>side</td><td>string</td><td><code>BUY/SELL</code></td><td>Taker side</td><td></td></tr><tr><td>id</td><td>long</td><td><code>629861</code></td><td>Transaction id</td><td></td></tr><tr><td>symbol</td><td>string</td><td><code>BTC/USDT</code></td><td>Currency pair</td><td></td></tr></tbody></table>
 
 ### Kline/candlestick data
 
@@ -348,13 +346,15 @@ ps: If both `symbol` and `symbols` are provided, `symbol` takes precedence. If n
 
 #### Query Parameters
 
-| Name                                       | Type   | Description                                                                                                                                                                                                      |
-| ------------------------------------------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| symbol<mark style="color:red;">\*</mark>   |        | Symbol Name E.g. BTC/USDT                                                                                                                                                                                        |
-| interval<mark style="color:red;">\*</mark> | String | <p>Interval of the Kline. Possible values include: <code>1min</code>,<code>5min</code>,<code>15min</code>,<code>30min</code>,<code>60min</code>,<code>1day</code>,<code>1week</code>,<code>1month</code><br></p> |
-|  Default 100; Max 300                      | String | Default 100; Max 300Responses200                                                                                                                                                                                 |
-| startTime                                  | long   | startTime  example:`1538728740000`                                                                                                                                                                               |
-| endTime                                    | long   | endTime example:`1538728740000`                                                                                                                                                                                  |
+| Name                                       | Type    | Description                                                                                                                                                                                                      |
+| ------------------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| symbol<mark style="color:red;">\*</mark>   |         | Symbol Name E.g. BTC/USDT                                                                                                                                                                                        |
+| interval<mark style="color:red;">\*</mark> | String  | <p>Interval of the Kline. Possible values include: <code>1min</code>,<code>5min</code>,<code>15min</code>,<code>30min</code>,<code>60min</code>,<code>1day</code>,<code>1week</code>,<code>1month</code><br></p> |
+|  Default 100; Max 300                      | String  | Default 100; Max 300Responses200                                                                                                                                                                                 |
+| startTime                                  | long    | startTime  example:`1538728740000`                                                                                                                                                                               |
+| endTime                                    | long    | endTime example:`1538728740000`                                                                                                                                                                                  |
+| timezone                                   | String  | Time zone, eg:UTC-09                                                                                                                                                                                             |
+| limit                                      | integer | Returns the number of k-lines                                                                                                                                                                                    |
 
 {% tabs %}
 {% tab title="200: OK " %}
@@ -599,7 +599,7 @@ Endpoints under **Trade** require an API Key and a signature
 
 #### **Response:**
 
-<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>Example</th><th>Description</th><th></th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>Order ID (system generated)</td><td></td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>Order ID (sent by yourself)</td><td></td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Currency Pair Name</td><td></td></tr><tr><td>price</td><td>float</td><td><code>4765.29</code></td><td>Order Price</td><td></td></tr><tr><td>origQty</td><td>float</td><td><code>1.01</code></td><td>Number of orders</td><td></td></tr><tr><td>executedQty</td><td>float</td><td><code>1.01</code></td><td>Number of orders already filled</td><td></td></tr><tr><td>avgPrice</td><td>float</td><td><code>4754.24</code></td><td>Average price of orders already filled</td><td></td></tr><tr><td>type</td><td>string</td><td>limit</td><td>The order type<code>LIMIT,MARKET</code></td><td></td></tr><tr><td>side</td><td>string</td><td><code>BUY</code></td><td>Order direction. Possible values can only be: BUY (buy long) and SELL (sell short)</td><td></td></tr><tr><td>status</td><td>string</td><td><code>NEW</code></td><td>Order status. Possible values are NEW (new order, no transaction), PARTIALLY_FILLED (partially filled), FILLED (fully filled), CANCELED (cancelled) and REJECTED (order rejected).POST</td><td></td></tr><tr><td>transactTime</td><td>string</td><td>1574327555669</td><td>Order Creation Time</td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th>name</th><th width="150">type</th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td>orderId</td><td>long</td><td><code>150695552109032492</code></td><td>Order ID (system generated)</td></tr><tr><td>clientorderId</td><td>string</td><td><code>213443</code></td><td>Order ID (sent by yourself)</td></tr><tr><td>symbol</td><td>string</td><td><code>BTCUSDT</code></td><td>Currency Pair Name</td></tr><tr><td>price</td><td>float</td><td><code>4765.29</code></td><td>Order Price</td></tr><tr><td>origQty</td><td>float</td><td><code>1.01</code></td><td>Number of orders</td></tr><tr><td>executedQty</td><td>float</td><td><code>1.01</code></td><td>Number of orders already filled</td></tr><tr><td>avgPrice</td><td>float</td><td><code>4754.24</code></td><td>Average price of orders already filled</td></tr><tr><td>type</td><td>string</td><td>limit</td><td>The order type<code>LIMIT,MARKET</code></td></tr><tr><td>side</td><td>string</td><td><code>BUY</code></td><td>Order direction. Possible values can only be: BUY (buy long) and SELL (sell short)</td></tr><tr><td>status</td><td>string</td><td><code>NEW</code></td><td>Order status. Possible values are NEW (new order, no transaction), PARTIALLY_FILLED (partially filled), FILLED (fully filled), CANCELED (cancelled) and REJECTED (order rejected).POST</td></tr><tr><td>transactTime</td><td>string</td><td>1574327555669</td><td>Order Creation Time</td></tr></tbody></table>
 
 
 
@@ -929,20 +929,15 @@ Endpoints under Account require an API-key and a signature.<br>
 {% tabs %}
 {% tab title="200: OK  Successfully retrieved account information." %}
 ```javascript
-{
-    'balances': 
-        [
-            {
-                'asset': 'BTC', 
-                'free': '0', 
-                'locked': '0'
-                }, 
-            {
-                'asset': 'ETH', 
-                'free': '0', 
-                'locked': '0'
-                },...
-        ]
+{{
+    "balances": [
+        {
+            "uid": 32556741,
+            "asset": "BTC",
+            "free": "0.0000000000",
+            "locked": "0.0000000000"
+        }
+    ]
 }
 ```
 {% endtab %}
@@ -952,19 +947,18 @@ Endpoints under Account require an API-key and a signature.<br>
 
 #### Response: <a href="#response-10" id="response-10"></a>
 
-| name       | type | description          |
-| ---------- | ---- | -------------------- |
-| `balances` | \[]  | Show balance details |
+| name       | type | description  |
+| ---------- | ---- | ------------ |
+| `balances` | \[]  | balance list |
 
 `balances` field:
 
 | name     | type   | example | description                     |
 | -------- | ------ | ------- | ------------------------------- |
+| `uid`    | string | 10001   | 用户id                            |
 | `asset`  | string | `USDT`  | Name of the asset               |
 | `free`   | float  | 1000.30 | Amount available for use        |
 | `locked` | float  | 400     | Amount locked (for open orders) |
-
-
 
 ### **Transfer**
 

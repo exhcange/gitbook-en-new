@@ -185,7 +185,7 @@
                 "symbol": "ETH",
                 "status_text": "Received",
                 "uid": 23998561,
-                "dmType": 1,
+                "depositType": 1,
                 "mainChainName": "ETH",
                 "completionTime": 1746585662000
             }
