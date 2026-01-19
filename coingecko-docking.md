@@ -117,9 +117,9 @@ no
 
 **Request parameters**
 
-| Name       | Type   | Description                                |
-| ---------- | ------ | ------------------------------------------ |
-| ticker\_id | string | contract\_name【Optional】, eg. "E-BTC-USDT" |
+```
+no
+```
 
 **Response parameters**
 
@@ -128,7 +128,7 @@ no
 **Sample request**
 
 ```
-https://futuresopenapi.xxx.xx/pub/coingecko/contracts?ticker_id=E-BTC-USDT
+https://futuresopenapi.xxx.xx/pub/coingecko/contracts
 ```
 
 **Sample response**
