@@ -2,7 +2,7 @@
 
 ### Coin quotes
 
-<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/coinGecko/pub/v1/ticker`
+<mark style="color:blue;">`GET`</mark> `https://openapi.xxx.xx/coinGecko/pub/v1/tickers`
 
 **Request parameters**
 
