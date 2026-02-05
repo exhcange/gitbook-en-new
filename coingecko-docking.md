@@ -28,32 +28,32 @@ no
 {% tabs %}
 {% tab title="200" %}
 ```json
-{
-    "ETH_USDT": {
-        "ticker_id": "ETH_USDT",
-        "base_currency": "ETH",
+[
+    {
+        "ticker_id": "A_USDT",
+        "base_currency": "A",
         "target_currency": "USDT",
-        "last_price": 238.2000000000000000,
-        "base_volume": 0.0000,
-        "target_volume": 0.000000,
-        "bid": 0,
-        "ask": 0,
-        "high": 238.2,
-        "low": 238.2
+        "last_price": 0.0897000000000000,
+        "base_volume": 545657.3,
+        "target_volume": 49595.5838,
+        "bid": 0.0895,
+        "ask": 0.09,
+        "high": 0.0941,
+        "low": 0.0877
     },
-    "BCH_USDT": {
-        "ticker_id": "BCH_USDT",
-        "base_currency": "BCH",
+    {
+        "ticker_id": "HYPE_USDT",
+        "base_currency": "HYPE",
         "target_currency": "USDT",
-        "last_price": 1.0000000000000000,
-        "base_volume": 0.000000,
-        "target_volume": 0E-10,
-        "bid": 0,
-        "ask": 0,
-        "high": 1,
-        "low": 1
+        "last_price": 34.9940000000000000,
+        "base_volume": 741733.37,
+        "target_volume": 25429154.756,
+        "bid": 34.906,
+        "ask": 35.046,
+        "high": 36.286,
+        "low": 32.543
     }
-}
+]
 ```
 {% endtab %}
 {% endtabs %}
@@ -71,12 +71,12 @@ no
 
 **Response parameters**
 
-| Name       | type           | Example                     | description                                                              |
-| ---------- | -------------- | --------------------------- | ------------------------------------------------------------------------ |
-| ticker\_id | string         | BTC\_USDT                   | token pair                                                               |
-| timestamp  | integer(int64) | 1766976278000               | Unix timestamp, in milliseconds, of the last update                      |
-| bids       | array          | \[\[1000,0.1], \[2000,0.2]] | An array with two elements, the bid and quantity for each purchase       |
-| asks       | array          | \[\[2000,0.2], \[3000,0.3]] | An array of two elements with the price and quantity for each sell order |
+| Name       | type           | Example                             | description                                                              |
+| ---------- | -------------- | ----------------------------------- | ------------------------------------------------------------------------ |
+| ticker\_id | string         | BTC\_USDT                           | token pair                                                               |
+| timestamp  | integer(int64) | 1766976278000                       | Unix timestamp, in milliseconds, of the last update                      |
+| bids       | array          | \[\["1000","0.1"], \["2000","0.2"]] | An array with two elements, the bid and quantity for each purchase       |
+| asks       | array          | \[\["2000","0.2"], \["3000","0.3"]] | An array of two elements with the price and quantity for each sell order |
 
 **Sample response**
 
@@ -85,25 +85,25 @@ no
 ```json
 {
     "ticker_id": "BTC_USDT",
-    "timestamp": 1766976278000,
+    "timestamp": 1770297048000,
     "bids": [
         [
-            98000,
-            0.46938777
+            "69662.14",
+            "0.28558"
         ],
         [
-            98500.93,
-            0.1
+            "69661.76",
+            "0.01602"
         ]
     ],
     "asks": [
         [
-            98000,
-            0.46938777
+            "69663.05",
+            "0.48278"
         ],
         [
-            98500.93,
-            0.1
+            "69663.43",
+            "0.01097"
         ]
     ]
 }
