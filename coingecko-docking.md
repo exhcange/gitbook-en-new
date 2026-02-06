@@ -206,12 +206,12 @@ https://futuresopenapi.xxx.xx/pub/coingecko/contracts
 
 **Response parameters**
 
-| **Name**   | **Type**    | **Example**                                            | **Description**                                                                 |
-| ---------- | ----------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- |
-| ticker\_id | string      |   E-BTC-USDT                                           | A pair such as "BTC-PERP", with delimiter between different cryptoassets        |
-| timestamp  |   timestamp |   1768289995029                                        | Unix timestamp in milliseconds for when the last updated time occurred.         |
-| bids       |   array     | <p>[<br>[98000,0.469387],<br>[98500.93,0.1]<br>]</p>   | An array containing 2 elements. The offer price and quantity for each bid order |
-| asks       |   array     | <p>[<br>[97000,0.46938777],<br>[96500.93,0.1]<br>]</p> | An array containing 2 elements. The ask price and quantity for each ask order   |
+| **Name**   | **Type**    | **Example**                                             | **Description**                                                                 |
+| ---------- | ----------- | ------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| ticker\_id | string      |   E-BTC-USDT                                            | A pair such as "BTC-PERP", with delimiter between different cryptoassets        |
+| timestamp  |   timestamp |   1768289995029                                         | Unix timestamp in milliseconds for when the last updated time occurred.         |
+| bids       |   array     | <p>[<br>["98000","100"],<br>["98500.93","100"]<br>]</p> | An array containing 2 elements. The offer price and quantity for each bid order |
+| asks       |   array     | <p>[<br>["97000","100"],<br>["96500.93","100"]<br>]</p> | An array containing 2 elements. The ask price and quantity for each ask order   |
 
 **Sample request**
 
