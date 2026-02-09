@@ -4,6 +4,10 @@ description: Latest Update： 2025-03-28
 
 # CHANGELOG
 
+## 2026-02-09
+
+Added: WebSocket push support for asset changes and order update events.
+
 ## 2025-03-28
 
 * &#x20;`https://openapi.xxx.xx/sapi/v2/symbols`.  Return value Add "feeRateMaker" "feeRateTaker"
