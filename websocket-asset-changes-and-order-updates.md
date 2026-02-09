@@ -123,6 +123,8 @@ Whenever the account balance changes, an event `outboundAccountPosition` is sent
 
 Orders are updated through the `executionReport` event.
 
+Note: Market orders do not trigger this event.
+
 ```json
 {
   "E": 1745389508472, // Event time
