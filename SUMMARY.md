@@ -10,6 +10,7 @@
 * [Sub Account](sub-account.md)
 * [Wallet](wallet.md)
 * [WebSocket](websocket.md)
+* [WebSocket – Asset Changes and Order Updates](websocket-asset-changes-and-order-updates.md)
 * [Websocket-Futures Orders Position](websocket-futures-orders-position.md)
 * [CMC docking](cmc-docking.md)
 * [Coingecko docking](coingecko-docking.md)
