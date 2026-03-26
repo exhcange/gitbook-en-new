@@ -1082,9 +1082,10 @@ All interfaces under the account require [signature and API-key verification​]
 
 
 
-&#x20;**Lead Trader Single Order (Open/Close Position)**\
-POST [https://futuresopenapi.xxx.xx/fapi/v1/kol\_order](https://futuresopenapi.xxx.xx/fapi/v1/kol_order)
---------------------------------------------------------------------------------------------------------
+## &#x20;**Lead Trader Single Order (Open/Close Position)**
+
+\
+<mark style="color:blue;">POST</mark> [<mark style="color:$info;">https://futuresopenapi.xxx.xx/fapi/v1/kol\_order</mark>](https://futuresopenapi.xxx.xx/fapi/v1/kol_order)
 
 | Name            | Type   | Description                   |
 | --------------- | ------ | ----------------------------- |
@@ -1125,9 +1126,10 @@ json
 }
 ```
 
-**Lead Trader Assets**\
-GET [https://futuresopenapi.xxx.xx/fapi/v1/kol\_balance](https://futuresopenapi.xxx.xx/fapi/v1/kol_balance)
------------------------------------------------------------------------------------------------------------
+## **Lead Trader Assets**
+
+\
+<mark style="color:blue;">GET</mark>  [<mark style="color:$info;">https://futuresopenapi.xxx.xx/fapi/v1/kol\_balance</mark>](https://futuresopenapi.xxx.xx/fapi/v1/kol_balance)
 
 | Name        | Type   | Description  |
 | ----------- | ------ | ------------ |
