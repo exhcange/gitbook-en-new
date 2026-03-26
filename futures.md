@@ -1082,3 +1082,115 @@ All interfaces under the account require [signature and API-key verification​]
 
 
 
+&#x20;**Lead Trader Single Order (Open/Close Position)**\
+POST [https://futuresopenapi.xxx.xx/fapi/v1/kol\_order](https://futuresopenapi.xxx.xx/fapi/v1/kol_order)
+--------------------------------------------------------------------------------------------------------
+
+| Name            | Type   | Description                   |
+| --------------- | ------ | ----------------------------- |
+| X-CH-TS         | string | Timestamp                     |
+| X-CH-APIKEY     | string | Your API-KEY                  |
+| X-CH-SIGN       | string | Signature                     |
+| futures-version | string | Version number: 101, required |
+
+**Request Body**
+
+| Name             | Type    | Description                                                                  | Required                                           |
+| ---------------- | ------- | ---------------------------------------------------------------------------- | -------------------------------------------------- |
+| volume           | number  | Order quantity                                                               | Yes                                                |
+| price            | number  | Order price                                                                  | No, required when type=LIMIT                       |
+| orderUnit        | number  | Order unit, 1 (coin), 2 (contract), 3 (value). Default unit: 2               | No, default: 2                                     |
+| contractName     | string  | Contract name, e.g., E-BTC-USDT                                              | Yes                                                |
+| type             | string  | Order type, LIMIT/MARKET                                                     | Yes                                                |
+| side             | string  | Trade direction, BUY/SELL                                                    | Yes                                                |
+| open             | string  | Open/close direction, OPEN/CLOSE                                             | Yes                                                |
+| positionType     | number  | Position type, 1 Cross / 2 Isolated                                          | Yes                                                |
+| clientOrderId    | string  | Client order identifier, string of less than 32 characters                   | No                                                 |
+| timeInForce      | string  | Time in force, not required for market orders. Options: IOC, FOK, POST\_ONLY | No                                                 |
+| leverageLevel    | number  | Leverage                                                                     | No / Default is the lead trader account's leverage |
+| triggerPrice     | string  | Trigger price                                                                | No                                                 |
+| isConditionOrder | Boolean | Whether it is a conditional order                                            | No, default false                                  |
+
+**Response**
+
+json
+
+```
+{
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "orderId": 256609229205684228 // Order ID
+    }
+}
+```
+
+**Lead Trader Assets**\
+GET [https://futuresopenapi.xxx.xx/fapi/v1/kol\_balance](https://futuresopenapi.xxx.xx/fapi/v1/kol_balance)
+-----------------------------------------------------------------------------------------------------------
+
+| Name        | Type   | Description  |
+| ----------- | ------ | ------------ |
+| X-CH-TS     | string | Timestamp    |
+| X-CH-APIKEY | string | Your API-KEY |
+| X-CH-SIGN   | string | Signature    |
+
+**Request Body**\
+None
+
+**Response**\
+Example:
+
+json
+
+```
+{
+    "code": "0",
+    "msg": "Success",
+    "data": [
+        {
+            "coin": "USDT",
+            "originCoin": "USDT",
+            "marginBalance": 2000.0,
+            "canAmount": 103385.267,
+            "precision": 3,
+            "minMarginAmount": 20.0,
+            "maxMarginAmount": 100000.0,
+            "minFollowAmount": 100.0,
+            "maxFollowAmount": 5000.0,
+            "minEveryAmount": 100.0,
+            "maxEveryAmount": 5000.0,
+            "maxCanAddAmount": 98000.0,
+            "maxCanSubAmount": 1980.0,
+            "usdtAmount": 2000.0,
+            "isHold": 0
+        }
+    ],
+    "msgData": null,
+    "succ": true
+}
+```
+
+**Data Structure:**
+
+| Level | Field Path         | Type   | Description                                                   | Example Value |
+| ----- | ------------------ | ------ | ------------------------------------------------------------- | ------------- |
+| 1     | code               | string | Response status code                                          | "0"           |
+| 1     | msg                | string | Response message                                              | "Success"     |
+| 1     | data               | array  | Data list                                                     | \[...]        |
+| 2     | └─ data\[0]        | object | First data object                                             | {...}         |
+| 3     | ├─ coin            | string | Coin name                                                     | "USDT"        |
+| 3     | ├─ originCoin      | string | Original coin name                                            | "USDT"        |
+| 3     | ├─ marginBalance   | number | Lead trader account margin balance                            | 2000          |
+| 3     | ├─ canAmount       | number | Master account available quantity / available position amount | 103385.267    |
+| 3     | ├─ precision       | number | Precision (number of decimal places)                          | 3             |
+| 3     | ├─ minMarginAmount | number | Minimum margin amount                                         | 20            |
+| 3     | ├─ maxMarginAmount | number | Maximum margin amount                                         | 100000        |
+| 3     | ├─ minFollowAmount | number | Minimum copy trading amount                                   | 100           |
+| 3     | ├─ maxFollowAmount | number | Maximum copy trading amount                                   | 5000          |
+| 3     | ├─ minEveryAmount  | number | Minimum amount per operation                                  | 100           |
+| 3     | ├─ maxEveryAmount  | number | Maximum amount per operation                                  | 5000          |
+| 3     | ├─ maxCanAddAmount | number | Maximum additional amount available                           | 98000         |
+| 3     | ├─ maxCanSubAmount | number | Maximum reduction amount available                            | 1980          |
+| 3     | ├─ usdtAmount      | number | USDT equivalent amount                                        | 2000          |
+| 3     | └─ isHold          | number | Whether held (0-No, 1-Yes)                                    | 0             |
