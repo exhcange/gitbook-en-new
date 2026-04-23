@@ -1354,11 +1354,11 @@ json
 
 
 
-
+## KOL History Orders
 
 `POST` `https://futuresopenapi.xxx.xx/fapi/v1/kol_history_orders`
 
-### Headers
+**Headers**
 
 | Name        | Type    | Description   |
 | ----------- | ------- | ------------- |
@@ -1366,7 +1366,7 @@ json
 | X-CH-APIKEY | string  |  Your API-key |
 | X-CH-TS     | integer | Timestamp     |
 
-### Request Body
+**Request Body**
 
 | Name         | type   | Description                                                                                                                              |
 | ------------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1390,7 +1390,7 @@ eg.
 }
 ```
 
-### Response:
+**Response:**
 
 {% code title="200:OK" %}
 ```json
@@ -1426,7 +1426,7 @@ eg.
 
 `POST` `https://futuresopenapi.xxx.xx/fapi/v1/kol_current_order`&#x20;
 
-### Headers
+**Headers**
 
 | Name        | Type    | Description   |
 | ----------- | ------- | ------------- |
@@ -1434,7 +1434,7 @@ eg.
 | X-CH-APIKEY | string  |  Your API-key |
 | X-CH-TS     | integer | Timestamp     |
 
-### Request Body
+**Request Body**
 
 | Name         | type   | Description                                                                                   |
 | ------------ | ------ | --------------------------------------------------------------------------------------------- |
@@ -1452,7 +1452,7 @@ eg.
 }
 ```
 
-### Response
+**Response**
 
 {% code title="200:OK" %}
 ```json
@@ -1489,7 +1489,7 @@ eg.
 
 `POST` `https://futuresopenapi.xxx.xx/fapi/v1/kol_history_pnl`
 
-### Headers
+**Headers**
 
 | Name        | Type    | Description   |
 | ----------- | ------- | ------------- |
@@ -1497,7 +1497,7 @@ eg.
 | X-CH-APIKEY | string  |  Your API-key |
 | X-CH-TS     | integer | Timestamp     |
 
-### Request Body
+**Request Body**
 
 | Name         | type   | Description                                                                                   |
 | ------------ | ------ | --------------------------------------------------------------------------------------------- |
@@ -1519,7 +1519,7 @@ eg.
 }
 ```
 
-### Response:
+**Response:**
 
 {% code title="200:OK" %}
 ```json
