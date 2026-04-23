@@ -1351,3 +1351,199 @@ json
 | 3     | ├─ maxCanSubAmount | number | Maximum reduction amount available                            | 1980          |
 | 3     | ├─ usdtAmount      | number | USDT equivalent amount                                        | 2000          |
 | 3     | └─ isHold          | number | Whether held (0-No, 1-Yes)                                    | 0             |
+
+
+
+
+
+`POST` `https://futuresopenapi.xxx.xx/fapi/v1/kol_history_orders`
+
+### Headers
+
+| Name        | Type    | Description   |
+| ----------- | ------- | ------------- |
+| X-CH-SIGN   | string  |  Signature    |
+| X-CH-APIKEY | string  |  Your API-key |
+| X-CH-TS     | integer | Timestamp     |
+
+### Request Body
+
+| Name         | type   | Description                                                                                                                              |
+| ------------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| contractName | String | <p>Contract alias (display name shown on the page)<br>Defaults to querying all contracts.</p>                                            |
+| status       | String | <p>order states: FILLED (fully executed), CANCELED (canceled), EXPIRED (abnormal/expired order).<br>Defaults to querying all states.</p> |
+| page         | number | Integer; default is 1.                                                                                                                   |
+| limit        | number | Integer; default is 100, maximum 1000.                                                                                                   |
+| beginTime    | number | Start time (timestamp).                                                                                                                  |
+| endTime      | number | End time (timestamp).                                                                                                                    |
+
+eg.
+
+```json
+{
+    "contractName": "ETHUSDT",
+    "page": 1,
+    "limit": 100,
+    "beginTime": 1763606659000,
+    "endTime": 1763608077000,
+    "status": "CANCELED"
+}
+```
+
+### Response:
+
+{% code title="200:OK" %}
+```json
+{
+    "count": 1,
+    "orderList": [
+        {
+            "side": "BUY",                // Order side: BUY = long, SELL = short
+            "orderId": 3018790383550431319, // Order ID
+            "avgPrice": 1842.33007463,     // Average fill price
+            "tradeFee": 3.1105900980000000, // Trading fee
+            "realizedAmount": 0E-16,        // Realized PnL
+            "leverageLevel": 5,             // Leverage multiplier
+            "type": "MARKET",               // Order price type: MARKET or LIMIT
+            "mtime": 1763607594000,         // Order last-updated time
+            "volume": 2000.0000000000000000, // Order quantity (in contracts)
+            "remainQty": 794.0000000000000000, // Remaining unfilled quantity
+            "dealVolume": 1206,             // Filled quantity
+            "action": "OPEN",               // Position action: OPEN or CLOSE
+            "ctime": 1763607581000,         // Order creation time
+            "contractName": "ETHUSDT",      // Contract name
+            "timeInForce": "",              // Limit-order TIF: IOC, FOK, or POST_ONLY
+            "status": "CANCELED"            // Order status
+        }
+    ]
+}
+```
+{% endcode %}
+
+
+
+## KOL Current Order
+
+`POST` `https://futuresopenapi.xxx.xx/fapi/v1/kol_current_order`&#x20;
+
+### Headers
+
+| Name        | Type    | Description   |
+| ----------- | ------- | ------------- |
+| X-CH-SIGN   | string  | Signature     |
+| X-CH-APIKEY | string  |  Your API-key |
+| X-CH-TS     | integer | Timestamp     |
+
+### Request Body
+
+| Name         | type   | Description                                                                                   |
+| ------------ | ------ | --------------------------------------------------------------------------------------------- |
+| contractName | String | <p>Contract alias (display name shown on the page)<br>Defaults to querying all contracts.</p> |
+| page         | number | Integer; default is 1.                                                                        |
+| limit        | number | Integer; default is 100, maximum 1000.                                                        |
+
+eg.
+
+```json
+{
+    "contractName": "ETHUSDT",
+    "page": 1,
+    "limit": 100
+}
+```
+
+### Response
+
+{% code title="200:OK" %}
+```json
+{
+    "count": 1,
+    "orderList": [
+        {
+            "side": "BUY",                 // Order side: BUY = long, SELL = short
+            "orderId": 3018790383550431319, // Order ID
+            "avgPrice": 0,                 // Average fill price
+            "tradeFee": 0,                 // Trading fee
+            "realizedAmount": 0,           // Realized PnL
+            "leverageLevel": 10,           // Leverage multiplier
+            "type": "LIMIT",               // Order price type: MARKET or LIMIT
+            "mtime": 1763607594000,        // Order last-updated time
+            "volume": 500.0000000000000000, // Order quantity (in contracts)
+            "remainQty": 500.0000000000000000, // Remaining unfilled quantity
+            "dealVolume": 0,               // Filled quantity
+            "action": "OPEN",              // Position action: OPEN or CLOSE
+            "ctime": 1763607581000,        // Order creation time
+            "contractName": "ETHUSDT",     // Contract name
+            "price": 1800.00000000,        // Order price (for limit orders)
+            "timeInForce": "",             // Limit-order TIF: IOC, FOK, or POST_ONLY
+            "status": "NEW"                // Order status: INIT = initial, NEW = new order, PART_FILLED = partially filled
+        }
+    ]
+}
+```
+{% endcode %}
+
+
+
+## KOL History PNL
+
+`POST` `https://futuresopenapi.xxx.xx/fapi/v1/kol_history_pnl`
+
+### Headers
+
+| Name        | Type    | Description   |
+| ----------- | ------- | ------------- |
+| X-CH-SIGN   | string  |  Signature    |
+| X-CH-APIKEY | string  |  Your API-key |
+| X-CH-TS     | integer | Timestamp     |
+
+### Request Body
+
+| Name         | type   | Description                                                                                   |
+| ------------ | ------ | --------------------------------------------------------------------------------------------- |
+| contractName | String | <p>Contract alias (display name shown on the page)<br>Defaults to querying all contracts.</p> |
+| page         | number | Integer; default is 1.                                                                        |
+| limit        | number | Integer; default is 100, maximum 1000.                                                        |
+| beginTime    | number | Start time (timestamp).                                                                       |
+| endTime      | number | Integer; default is 100, maximum 1000.                                                        |
+
+eg.
+
+```json
+{
+    "contractName": "ETHUSDT",
+    "page": 1,
+    "limit": 100,
+    "beginTime": 1763606659000,
+    "endTime": 1763608077000,
+}
+```
+
+### Response:
+
+{% code title="200:OK" %}
+```json
+{
+    "count": 1,
+    "positionList": [
+        {
+            "positionId": 12345678,        // Position ID
+            "contractName": "ETHUSDT",     // Contract name
+            "side": "BUY",                 // Position side: BUY = long, SELL = short
+            "positionType": "TOTAL",       // Position type: TOTAL = cross margin, PART = isolated margin
+            "leverageLevel": 5,            // Leverage multiplier
+            "openPrice": 1842.33007463,    // Average entry price
+            "closePrice": 1860.50000000,   // Average close price
+            "volume": 2000.0000000000000000, // Position size
+            "closeVolume": 2000.0000000000000000, // Closed quantity
+            "historyRealizedAmount": 15.2300000000000000, // Cumulative historical realized PnL
+            "tradeFee": -0.0907943000000000, // Trading fee
+            "closeProfit": 0.0180000000000000, // Close-out PnL
+            "capitalFee": -13.2573458160000000, // Funding fee
+            "ctime": 1763607581000,        // Open time
+            "mtime": 1763608077000         // Close time
+        }
+    ]
+}
+```
+{% endcode %}
