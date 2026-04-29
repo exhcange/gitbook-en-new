@@ -1400,6 +1400,7 @@ eg.
         {
             "side": "BUY",                // Order side: BUY = long, SELL = short
             "orderId": 3018790383550431319, // Order ID
+            "clientId": "kol_547915",
             "avgPrice": 1842.33007463,     // Average fill price
             "tradeFee": 3.1105900980000000, // Trading fee
             "realizedAmount": 0E-16,        // Realized PnL
@@ -1462,6 +1463,7 @@ eg.
         {
             "side": "BUY",                 // Order side: BUY = long, SELL = short
             "orderId": 3018790383550431319, // Order ID
+            "clientId": "kol_547915",
             "avgPrice": 0,                 // Average fill price
             "tradeFee": 0,                 // Trading fee
             "realizedAmount": 0,           // Realized PnL
