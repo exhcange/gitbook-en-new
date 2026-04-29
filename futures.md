@@ -1422,9 +1422,9 @@ eg.
 
 
 
-## KOL Current Order
+## KOL Current Orders
 
-`POST` `https://futuresopenapi.xxx.xx/fapi/v1/kol_current_order`&#x20;
+`POST` `https://futuresopenapi.xxx.xx/fapi/v1/kol_current_orders`&#x20;
 
 **Headers**
 
