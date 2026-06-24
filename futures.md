@@ -1608,3 +1608,185 @@ eg.
 | `tradeFee`       | float  | 2.9                  | order trade fee                                                                                                                                                                       |
 | `realizedAmount` | float  | 10.6                 | order prfit                                                                                                                                                                           |
 
+
+
+## Queries current active normal trigger orders of the KOL sub-account.
+
+`POST` `https://futuresopenapi.xxx.xx/fapi/v1/kol_trigger_order_list`
+
+**Headers**
+
+| Name            | Type    | Description   |
+| --------------- | ------- | ------------- |
+| X-CH-SIGN       | string  |  Signature    |
+| X-CH-APIKEY     | string  |  Your API-key |
+| X-CH-TS         | integer |  Time stamp   |
+| futures-version | integer |  101          |
+
+**Request Body**
+
+| Name         | type   | Description                                                         |
+| ------------ | ------ | ------------------------------------------------------------------- |
+| contractName | String | <p>Contract alias (display name shown on the page)<br>must have</p> |
+| page         | number | page                                                                |
+| limit        | number | max: 1000                                                           |
+
+示例
+
+```json
+{
+  "contractName": "BTC-USDT",
+  "page": 1,
+  "limit": 20
+}
+```
+
+**Response:**
+
+{% code title="200:OK" %}
+```json
+{
+  "code": "0",
+  "msg": "success",
+  "data": {
+    "trigOrderList": [
+      {
+        "id": "10001",
+        "triggerOrderId": "20001",
+        "contractId": 17,
+        "contractName": "BTC-USDT",
+        "marginCoin": "USDT",
+        "multiplier": "0.001",
+        "triggerPrice": "65000",
+        "price": "0",
+        "pricePrecision": 2,
+        "volume": "1",
+        "open": "CLOSE",
+        "side": "SELL",
+        "expireTime": 1780000000000,
+        "ctime": 1780000000000,
+        "mtime": 1780000000000,
+        "triggerType": 1
+      }
+    ],
+    "count": 1
+  }
+}
+```
+{% endcode %}
+
+
+
+## Batch creates TP/SL trigger orders for the KOL sub-account.
+
+`POST` `https://futuresopenapi.xxx.xx/fapi/v1/kol_profitLossOrder`
+
+**Headers**
+
+| Name            | Type    | Description   |
+| --------------- | ------- | ------------- |
+| X-CH-SIGN       | string  |  Signature    |
+| X-CH-APIKEY     | string  |  Your API-key |
+| X-CH-TS         | integer |  Time stamp   |
+| futures-version | integer | 101           |
+
+**Request Body**
+
+| Name                      | type   | Description                                                                                              |
+| ------------------------- | ------ | -------------------------------------------------------------------------------------------------------- |
+| contractName              | string | <p>must have</p><p>Contract alias (display name shown on the page)</p>                                   |
+| side                      | string | <p>Must have</p><p>Close side: <code>BUY</code> or <code>SELL</code>.</p>                                |
+| orderUnit                 | number | Order unit.Only support  `2`:CONT                                                                        |
+| orderList                 | Array  | <p>TP/SL order item list. It must be a JSON array, even when there is only one item. <br>MaxSize : 5</p> |
+| orderList\[].triggerType  | number | `1` stop loss, `2` take profit.                                                                          |
+| orderList\[].type         | number | <p>Place order type<br><code>1</code> limit, <code>2</code> market.</p>                                  |
+| orderList\[].price        | number | equired for limit orders. For market orders, omit it or pass `0`.                                        |
+| orderList\[].volume       | number | Order quantity. Must be greater than `0`. Current validation requires an integer quantity.               |
+| orderList\[].triggerPrice | number | Trigger price.                                                                                           |
+
+eg.
+
+```json
+{
+  "contractId": 17,
+  "side": "SELL",
+  "orderUnit": 2,
+  "orderList": [
+    {
+      "triggerType": 2,
+      "type": 1,
+      "price": "69000",
+      "volume": "1",
+      "triggerPrice": "68800"
+    },
+    {
+      "triggerType": 1,
+      "type": 2,
+      "price": "0",
+      "volume": "1",
+      "triggerPrice": "65000"
+    }
+  ]
+}
+```
+
+**Response:**
+
+{% code title="200:OK" %}
+```json
+{
+  "code": "0",
+  "msg": "success",
+  "data": {
+    "triggerIds": ["123456789", "123456790"]
+  }
+}
+```
+{% endcode %}
+
+
+
+## Cancels active normal trigger orders of the KOL sub-account under the specified contract.
+
+`POST` `https://futuresopenapi.xxx.xx/fapi/v1/kol_cancel_trigger_order`
+
+**Headers**
+
+| Name            | Type    | Description  |
+| --------------- | ------- | ------------ |
+| X-CH-SIGN       | string  | Signature    |
+| X-CH-APIKEY     | string  | Your API-key |
+| X-CH-TS         | integer |  Time stamp  |
+| futures-version | integer | 101          |
+
+**Request Body**
+
+| Name           | type   | Description                                                                                 |
+| -------------- | ------ | ------------------------------------------------------------------------------------------- |
+| contractName   | string | <p>must have</p><p>Contract alias (display name shown on the page)</p>                      |
+| triggerOrderId | string | <p>Trigger order ID.<br>Do not fill in to cancel all conditions of the current contract</p> |
+
+eg.
+
+```json
+{
+  "contractName": "BTCUSDT",
+  "triggerOrderId": "20001"
+}
+```
+
+**Response:**
+
+{% code title="200:OK" %}
+```json
+{
+  "code": "0",
+  "msg": "success",
+  "data": {
+    "triggerOrderId": 20001
+  }
+}
+
+If the request does not provide the condition order ID, the `triggerOrderId` in the response will be `null`.
+```
+{% endcode %}
